@@ -38,7 +38,7 @@ app.post('/webhook/', function(req, res) {
 			let text = event.message.text
 			//sendText(sender, " " + text.substring(0, 100))
 			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
-			decideMessage(sender, text)
+			decideMessage(sender, text1)
 
 		}
 	}
@@ -49,11 +49,11 @@ app.post('/webhook/', function(req, res) {
 function decideMessage(sender, text1) {
 	let text = text1.toLowerCase()
 	if (text.includes("hi")) {
-sendText(sender, "hi ")
+         sendText(sender, "hi ")
 	
 	} else if (text.includes("bye")) {
 
-sendText(sender, "bye, please come again ")
+         sendText(sender, "bye, please come again ")
 	}
 	} else if (text.includes("name")) {
 
@@ -145,7 +145,7 @@ function sendText(sender, text) {
 	request({
 		url: "https://graph.facebook.com/v2.6/me/messages",
 		qs : {access_token : token},
-		method: "POST",
+		method: "POST",qq
 		json: {
 			recipient: {id: sender},
 			message : messageData,
