@@ -79,7 +79,7 @@ function sendButtonMessage(sender, text){
         "buttons":[
           {
             "type":"postback",
-            "title":"Great Pyramid Of Giza",
+            "title":"Pyramid",
             "Payload":"pyramid"
           },
           
