@@ -55,56 +55,8 @@ function decideMessage(sender, text1){
 	let text = text1.toLowerCase()
 	if (text.includes("hi")){
         sendText(sender, "hi")
-	} else if (text.includes("haha")){
-        sendText(sender, "hehe")
-	} else if (text.includes("bye")){
-        sendText(sender, "bye,please come again")
-	} else if (text.includes("hey")){
-        sendText(sender, "hai")
-	} else if (text.includes("name")){
-        sendText(sender, "My name is Srirambot")
-	} else if (text.includes("created")){
-        sendText(sender, "Sriram is busy so he created me to chat with you")
-	} else if (text.includes("who")){
-        sendText(sender, "I am srirambot created by sriram")
-	} else if (text.includes("nice")){
-        sendText(sender, "Thank u")
-	} else if (text.includes("good")){
-        sendText(sender, ":)")
-	} else if (text.includes("bad")){
-        sendText(sender, ":(")
-	} else if (text.includes("whatsup")){
-        sendText(sender, "nuvve cheppu")
-	} else if (text.includes("inkenti")){
-        sendText(sender, "nuvve cheppu")
-	} else if (text.includes("inka")){
-        sendText(sender, "nuvve chepuu")
-	} else if (text.includes("srirambot")){
-        sendText(sender, "yes, My name is srirambot. Is that u asked")
-	} else if (text.includes("no")){
-        sendText(sender, ":(")
-	} else if (text.includes("yes")){
-        sendText(sender, ":(")
-	} else if (text.includes("sorry")){
-        sendText(sender, "its ok")
-	} else if (text.includes("how")){
-        sendText(sender, "5n, with code")
-	} else if (text.includes("ok")){
-        sendText(sender, ":)")
-	} else if (text.includes("age")){
-        sendText(sender, "i was created 2 days ago by sriram 18 yrs aged")
-	} else if (text.includes("s")){
-        sendText(sender, ":)")
-	} else if (text.includes("play")){
-        sendText(sender, "I cant play i am a bot")
-	} else if (text.includes("sare")){
-        sendText(sender, ":)")
 	} else if (text.includes("pyramid")){
         sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Kheops-Pyramid.jpg")                   
-	} else if (text.includes("pappa")){
-        sendText(sender, "pappa")
-	} else if (text.includes("hello")){
-        sendText(sender, "hello")
 	} else {
 		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
 		sendButtonMessage(sender, "Which is favourite wonder in the world?")
