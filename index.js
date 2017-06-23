@@ -37,12 +37,108 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 			//sendText(sender, " " + text.substring(0, 100))
-			sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+			decideMessage(sender, text)
 
 		}
 	}
 	res.sendStatus(200)
 })
+
+
+function decideMessage(sender, text1) {
+	let text = text1.toLowerCase()
+	if (text.includes("hi")) {
+sendText(sender, "hi ")
+	
+	} else if (text.includes("bye")) {
+
+sendText(sender, "bye, please come again ")
+	}
+	} else if (text.includes("name")) {
+
+sendText(sender, "My name is Srirambot ")
+	}
+	} else if (text.includes("created")) {
+sendText(sender, "Sriram is busy so he created me to chat with you ")
+
+	}
+	} else if (text.includes("hello")) {
+
+sendText(sender, "hello ")
+	}
+	} else if (text.includes("hey")) {
+
+sendText(sender, "hai ")
+	}
+	} else if (text.includes("who")) {
+
+sendText(sender, "I am srirambot created by sriram ")
+	}
+	} else if (text.includes("nice")) {
+
+sendText(sender, "Thank u :) ")
+	}
+	} else if (text.includes("good")) {
+
+sendText(sender, ":) ")
+	}
+	} else if (text.includes("bad")) {
+
+sendText(sender, ":(")
+	}
+	} else if (text.includes("whats")) {
+sendText(sender, "nuvve cheppu ")
+
+	}
+	} else if (text.includes("srirambot")) {
+
+sendText(sender, "yes, My name is srirambot. Is that u asked ")
+	}
+	} else if (text.includes("no")){
+sendText(sender, ":( ")
+
+	}
+	} else if (text.includes("sorry")){
+
+sendText(sender, " Its ok")
+	}
+	} else if (text.includes("how")){
+sendText(sender, "5n, with code ")
+
+	}
+	} else if (text.includes("ok")){
+
+sendText(sender, ":) ")
+	}
+	} else if (text.includes(" ")){
+
+sendText(sender, " ")
+	}
+	 else if (text.includes("age ")){
+
+sendText(sender, "i was created 2 days ago by sriram 18 yrs ages ")
+	}
+	 else if (text.includes("k ")){
+
+sendText(sender, ":) ")
+	}
+	 else if (text.includes(":) ")){
+
+sendText(sender, ":) ")
+	}
+	 else if (text.includes(" hehe")){
+
+sendText(sender, " haha")
+	}
+	else {
+sendText(sender, " sorry,Sriram is so lazy that he didnt programmed me completely. Please ask him to completely program me. Note:please use small letters dont use capitals")
+	}
+
+
+}
+
+
 
 function sendText(sender, text) {
 	let messageData = {text: text}
