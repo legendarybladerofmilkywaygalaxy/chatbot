@@ -118,7 +118,7 @@ function decideMessage(sender, text1){
 	} else if (text.includes("hello")){
         sendText(sender, "hello")
 	} else {
-		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
+		//sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
 		sendButtonMessage(sender, "Which is favourite wonder in the world?")
 	}
 }
@@ -193,7 +193,7 @@ function sendImageMessage(sender, imageUrl) {
       }
     }
 	}
-	sendRequest(sender, messageData)
+	sendRequest(sender, imageData)
 }
 function sendRequest(sender, messageData) {
 	request({
@@ -204,7 +204,8 @@ function sendRequest(sender, messageData) {
 			recipient: {id: sender},
 			message : messageData,
 		}
-	}, function(error, response, body) {
+	}, 
+	function(error, response, body) {
 		if (error) {
 			console.log("sending error")
 		} else if (response.body.error) {
