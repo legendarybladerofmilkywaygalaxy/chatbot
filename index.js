@@ -118,7 +118,7 @@ function decideMessage(sender, text1){
 	} else if (text.includes("hello")){
         sendText(sender, "hello")
 	} else {
-		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program me.")
+		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
 		sendButtonMessage(sender, "Which is favourite wonder in the world?")
 	}
 }
