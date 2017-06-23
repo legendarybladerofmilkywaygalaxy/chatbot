@@ -37,15 +37,25 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 			//sendText(sender, " " + text.substring(0, 100))
-			sendText(sender, "Hii sriram is busy now so created me to chat with you ")
-			
+			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+			decideMessage(sender, text)
 
 		}
 	}
 	res.sendStatus(200)
 })
 
+function decideMessage(sender, text1){
 
+	let text = text1.toLowerCase()
+	if (text.includes("summer")){
+        sendText(sender, "I Like")
+	} else if (text.includes("winter")){
+        sendText(sender, "I")
+	} else {
+		sendText(sender, "I Like fall")
+	}
+}
 
 function sendText(sender, text) {
 	let messageData = {text: text}
