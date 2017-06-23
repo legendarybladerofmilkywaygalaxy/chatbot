@@ -36,7 +36,9 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			sendText(sender, " " + text.substring(0, 100))
+			//sendText(sender, " " + text.substring(0, 100))
+			sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+
 		}
 	}
 	res.sendStatus(200)
