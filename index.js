@@ -100,25 +100,13 @@ function decideMessage(sender, text1){
 	} else if (text.includes("sare")){
         sendText(sender, ":)")
 	} else if (text.includes("pyramid")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Kheops-Pyramid.jpg")
-    } else if (text.includes("tajmahal")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Taj_Mahal_in_March_2004.jpg") 
-    } else if (text.includes("chaina")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:The_Great_Wall_of_China_at_Jinshanling.jpg")
-    } else if (text.includes("petra")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Petra_Jordan_BW_21.JPG")
-    } else if (text.includes("colloseum")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg")
-    } else if (text.includes("machupichhu")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Machu_Picchu,_Peru.jpg")
-    } else if (text.includes("christ")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:1_cristor_redentor_2014.jpg")                    
+        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Kheops-Pyramid.jpg")                   
 	} else if (text.includes("pappa")){
         sendText(sender, "pappa")
 	} else if (text.includes("hello")){
         sendText(sender, "hello")
 	} else {
-		//sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
+		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
 		sendButtonMessage(sender, "Which is favourite wonder in the world?")
 	}
 }
@@ -142,36 +130,7 @@ function sendButtonMessage(sender, text){
             "title":"Great Pyramid Of Giza",
             "Payload":"pyramid"
           },
-          {
-            "type":"postback",
-            "title":"Taj Mahal",
-            "Payload":"tajmahal"
-          },
-          {
-            "type":"postback",
-            "title":"Great Wall Of Chaina",
-            "Payload":"chaina"
-          },
-          {
-            "type":"postback",
-            "title":"Petra",
-            "Payload":"petra"
-          },
-          {
-            "type":"postback",
-            "title":"The Colloseum",
-            "Payload":"colloseum"
-          },
-          {
-            "type":"postback",
-            "title":"Machu Pichhu",
-            "Payload":"machupichhu"
-          },
-          {
-            "type":"postback",
-            "title":"Christ The Redeemer",
-            "Payload":"christ"
-          },
+          
           {
             "type":"postback",
             "title":"Start Chatting",
@@ -193,7 +152,7 @@ function sendImageMessage(sender, imageUrl) {
       }
     }
 	}
-	sendRequest(sender, imageData)
+	sendRequest(sender, messageData)
 }
 function sendRequest(sender, messageData) {
 	request({
