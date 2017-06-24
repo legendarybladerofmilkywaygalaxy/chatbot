@@ -38,12 +38,12 @@ app.post('/webhook/', function(req, res) {
 			//sendText(sender, " " + text.substring(0, 100))
 			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
 			 switch (event.message && event.message.text) {
-             case 'generic':
+             case 'wonders':
              sendGenericMessage(sender);
              break;
 
              default:
-             sendTextMessage(sender, "Hii sriram is busy now so created me to chat with you");
+             sendTextMessage(sender, "Hii, message 'wonders, without quotes to know about wonders of world");
     }
   
 
@@ -80,92 +80,90 @@ function sendGenericMessage(sender) {
               title: "Know more about Great wall of China"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "Start Chatting",
               payload: "Payload for first bubble",
             }],
           }, {
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            title: "Petra",
+            subtitle: "located in jordan",
+            image_url: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Petra_Jordan_BW_21.JPG",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "https://en.wikipedia.org/wiki/Petra",
+              title: "know more about petra"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "Chat",
               payload: "Payload for second bubble",
             }],
           }, {
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            title: "The Colosseum",
+            subtitle: "located in italy",             
+            image_url: "http://www.reidsitaly.com/images/lazio/rome/sights/colosseum-ext.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "https://en.wikipedia.org/wiki/Colosseum",
+              title: "know more"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "Chat",
               payload: "Payload for third bubble",
             }],
           }, {
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            title: "Chichen Itza",
+            subtitle: "located in Mexico ",
+                           
+            image_url: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Chichen-Itza-Castillo-Seen-From-East.JPG",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "https://en.wikipedia.org/wiki/Chichen_Itza",
+              title: "kmow more"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "Chat",
               payload: "Payload for fourth bubble",
             }],
           }, {
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            title: "Machu Pichhu",
+            subtitle: "located in Peru",
+                           
+            image_url: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Machu_Picchu,_Peru.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Machu_Picchu,_Peru.jpg",
+              title: "learn more"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "Chat",
               payload: "Payload for fifth bubble",
             }],
           }, {
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            title: "Tajmahal",
+            subtitle: "located in India",
+                           
+            image_url: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Taj_Mahal_in_March_2004.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "https://en.wikipedia.org/wiki/Taj_Mahal",
+              title: "more"
             }, {
               type: "postback",
               title: "Call Postback",
-              payload: "Payload for sixth bubble",
+              payload: "chat",
             }],
           },
              {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+            title: "Christ The Redeemer",
+            subtitle: "In Brazil",
+                           
+            image_url: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:1_cristor_redentor_2014.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
+              url: "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
+              title: "more"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "chat",
               payload: "Payload for seventh bubble",
             }]
           }]
