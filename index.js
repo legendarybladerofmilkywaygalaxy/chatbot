@@ -42,7 +42,7 @@ app.post('/webhook/', function(req, res) {
              sendGenericMessage(sender);
              break;
              case 'hi':
-             sendTextMessage(sender, hi);
+             sendTextMessage(sender, "hi");
              break;
 
              default:
