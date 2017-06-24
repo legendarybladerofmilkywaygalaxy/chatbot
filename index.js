@@ -76,7 +76,7 @@ function sendRequest(sender, messageData) {
 			recipient: {id: sender},
 			message : messageData,
 		}
-	}, function(error, response, body) {
+	},  function(error, response, body) {
 		if (error) {
 			console.log("sending error")
 		} else if (response.body.error) {
