@@ -56,7 +56,7 @@ function decideMessage(sender, text1){
 	if (text.includes("hi")){
         sendText(sender, "hi")
 	} else if (text.includes("pyramid")){
-        sendImageMessage(sender, "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Kheops-Pyramid.jpg")                   
+        sendImageMessage(sender)                   
 	} else {
 		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
 		sendButtonMessage(sender, "Which is favourite wonder in the world?")
@@ -95,12 +95,12 @@ function sendButtonMessage(sender, text){
 	sendRequest(sender, messageData)
 }
 
-function sendImageMessage(sender, imageUrl) {
+function sendImageMessage(sender) {
 	let imageData = {
 		"attachment":{
         "type":"image",
         "payload":{
-        "url":imageUrl
+        "url":"https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Kheops-Pyramid.jpg"
       }
     }
 	}
