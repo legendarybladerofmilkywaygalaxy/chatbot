@@ -36,34 +36,16 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			decideMessage(sender, text)
 			//sendText(sender, " " + text.substring(0, 100))
-			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+			sendText(sender, "Hii sriram is busy now so created me to chat with you ")
 			
 
 		}
-		if (event.postback) {
-			let text = JSON.stringify(event.postback)
-			decideMessage(sender, text)
-			continue
-		}
+		
 	}
 	res.sendStatus(200)
 })
 
-function decideMessage(sender, text1) {
-
-	let text = text1.toLowerCase()
-	if (text.includes("summer")){
-        sendImageMessage(sender)                  
-	} else if (text.includes("winter")) {
-        sendGenericMessage(sender)
-	} else {
-		sendText(sender, "I like fall")
-		//send question
-		sendButtonMessage(sender, "what is your favourite season?")
-	}
-}
 
 
 function sendText(sender, text) {
@@ -71,68 +53,6 @@ function sendText(sender, text) {
 	sendRequest(sender, messageData)
 }
 
-function sendButtonMessage(sender, text){
-	let messageData = {
-		"attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":text,
-        "buttons":[
-          {
-            "type":"postback",
-            "title":"Summer",
-            "Payload":"summer"
-           },
-           {
-           	"type":"postback",
-            "title":"Winter",
-            "Payload":"winter"
-           }
-          }
-        ]
-      }
-    }
-	}
-	sendRequest(sender, messageData)
-}
-
-function sendImageMessage(sender) {
-	let imageData = {
-	"attachment":{
-      "type":"image",
-      "payload":{
-        "url":"http://dreamatico.com/data_images/summer/summer-5.jpg"
-      }
-     }
-	}
-	sendRequest(sender, messageData)
-}
-
-function sendGenericMessage(sender) {
-	let messageData = { "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements":[
-           {
-            "title":"Winter!",
-            "image_url":"https://newevolutiondesigns.com/images/freebies/winter-wallpaper-20.jpg",
-            "subtitle":"I love Winter",
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://en.wikipedia.org/wiki/Winter",
-                "title":"more about winter"
-              },         
-            ]      
-          }
-        ]
-      }
-    }
-  }
-  sendRequest(sender, messageData)
-}
 
 function sendRequest(sender, messageData) {
 	request({
