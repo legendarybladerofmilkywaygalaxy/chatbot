@@ -37,7 +37,7 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 			//sendText(sender, " " + text.substring(0, 100))
-			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+			sendText(sender, "Hii sriram is busy now so created me to chat with you ")
 			decideMessage(sender, text)
 
 		}
