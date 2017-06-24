@@ -43,7 +43,9 @@ app.post('/webhook/', function(req, res) {
              break;
 
              default:
-             sendTextMessage(sender, "Hii, message 'wonders, without quotes to know about wonders of world");
+             //sendTextMessage(sender, "Hii, message 'wonders, without quotes to know about wonders of world");
+             decideMessage(sender, text);
+
     }
   
 
@@ -148,8 +150,8 @@ function sendGenericMessage(sender) {
               title: "more"
             }, {
               type: "postback",
-              title: "Call Postback",
-              payload: "chat",
+              title: "chat",
+              payload: "payload for seventh message",
             }],
           },
              {
@@ -173,6 +175,67 @@ function sendGenericMessage(sender) {
      sendRequest(sender, messageData)
 }
 
+function decideMessage(sender,text1) {
+	let text = text1.toLowerCase()
+	if (text.includes("hi")){
+        sendTextMessage(sender, "Hii, message 'wonders' without quotes to know about wonders of world" )                  
+	} else if (text.includes("hii")) {
+        sendTextMessage(sender, "Hii, message 'wonders, without quotes to know about wonders of world" )
+	} else if (text.includes("bye")){
+        sendTextMessage(sender, "bye,please come again")
+	} else if (text.includes("hey")){
+        sendTextMessage(sender, "hai")
+	} else if (text.includes("name")){
+        sendTextMessage(sender, "My name is Srirambot")
+	} else if (text.includes("created")){
+        sendTextMessage(sender, "Sriram is busy so he created me to chat with you")
+	} else if (text.includes("who")){
+        sendTextMessage(sender, "I am srirambot created by sriram")
+	} else if (text.includes("nice")){
+        sendTextMessage(sender, "Thank u")
+	} else if (text.includes("good")){
+        sendTextMessage(sender, ":)")
+	} else if (text.includes("bad")){
+        sendTextMessage(sender, ":(")
+	} else if (text.includes("whatsup")){
+        sendTextMessage(sender, "nuvve cheppu")
+	} else if (text.includes("inkenti")){
+        sendTextMessage(sender, "nuvve cheppu")
+	} else if (text.includes("inka")){
+        sendTextMessage(sender, "nuvve chepuu")
+    } else if (text.includes("hello")){
+        sendTextMessage(sender, "hello")
+    } else if (text.includes("idiot")){
+        sendTextMessage(sender, "u are an idiot")
+    } else if (text.includes("dirty")){
+        sendTextMessage(sender, "u r dirty")
+    } else if (text.includes("what")){
+        sendTextMessage(sender, "type 'wonders' without quotes")
+	} else if (text.includes("srirambot")){
+        sendTextMessage(sender, "yes, My name is srirambot. Is that u asked")
+	} else if (text.includes("no")){
+        sendTextMessage(sender, ":(")
+	} else if (text.includes("yes")){
+        sendTextMessage(sender, ":(")
+	} else if (text.includes("sorry")){
+        sendTextMessage(sender, "its ok")
+	} else if (text.includes("how")){
+        sendTextMessage(sender, "5n, with code")
+	} else if (text.includes("ok")){
+        sendTextMessage(sender, ":)")
+	} else if (text.includes("age")){
+        sendTextMessage(sender, "i was created 2 days ago by sriram 18 yrs aged")
+	} else if (text.includes("s")){
+        sendTextMessage(sender, ":)")
+	} else if (text.includes("play")){
+        sendTextMessage(sender, "I cant play i am a bot")
+	} else if (text.includes("sare")){
+        sendTextMessage(sender, ":)") 
+	} 
+	else {
+		sendTextMessage(sender, "sorry,sriram didnt programmed me completely ask him to program me")
+	}
+}
 function sendRequest(sender, messageData) {
 		request({
 		url : "https://graph.facebook.com/v2.6/me/messages",
