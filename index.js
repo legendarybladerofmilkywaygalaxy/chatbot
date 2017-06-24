@@ -73,15 +73,14 @@ function sendTextMessage(sender, text) {
 		}
 	})
 }
+app.listen(app.get('port'), function() {
+	console.log("running: port")
+})
 
 function sendGenericMessage(sender) {
   // To be expanded in later sections
   
 }
 
-}
 
-app.listen(app.get('port'), function() {
-	console.log("running: port")
-})
 
