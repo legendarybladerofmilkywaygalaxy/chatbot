@@ -81,8 +81,8 @@ function sendGenericMessage(sender) {
               title: "Open Web URL"
             }, {
               type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
+              title: "Start Chatting",
+              payload: "DEVELOPER_DEFINED_PAYLOAD",
             }],
           }, {
             title: "touch",
@@ -97,7 +97,22 @@ function sendGenericMessage(sender) {
               type: "postback",
               title: "Call Postback",
               payload: "Payload for second bubble",
-            }]
+            }],
+          }, {
+            title: "three",
+            subtitle: "Your Hands, Now in VR",
+            item_url: "https://www.oculus.com/en-us/touch/",               
+            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+            buttons: [{
+              type: "web_url",
+              url: "https://www.oculus.com/en-us/touch/",
+              title: "Open Web URL"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for second bubble",
+            }],
+          },
           }]
         }
       }
