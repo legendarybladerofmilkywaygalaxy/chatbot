@@ -62,6 +62,9 @@ app.post('/webhook/', function(req, res) {
              case 'hii':
              sendTextMessage(sender, "hii");
              break;
+             case 'image':
+             sendImageMessage(sender, "hii");
+             break;
              case 'who are you':
              sendTextMessage(sender, "sriram bot :p");
              break;
@@ -197,6 +200,17 @@ function sendGenericMessage(sender) {
       }
     }
      sendRequest(sender, messageData)
+}
+function sendImageMessage(sender, messageData) {
+	let messageData = {
+		"attachment":{
+      "type":"image",
+      "payload":{
+        "url":"https://petersapparel.com/img/shirt.png"
+      }
+    }
+	}
+	 sendRequest(sender, messageData)
 }
 function sendRequest(sender, messageData) {
 		request({
