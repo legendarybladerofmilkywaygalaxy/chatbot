@@ -37,7 +37,7 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 			//sendText(sender, " " + text.substring(0, 100))
-			sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
 			decideMessage(sender, text)
 
 		}
@@ -53,13 +53,11 @@ app.post('/webhook/', function(req, res) {
 function decideMessage(sender, text1) {
 
 	let text = text1.toLowerCase()
-	if (text.includes("hi")){
-        sendText(sender, "hi")
-	} else if (text.includes("pyramid")) {
-        sendImageMessage(sender)                   
+	if (text.includes("pyramid")){
+        sendText(sender, "hi")                  
 	} else {
-		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
-		sendButtonMessage(sender, "Which is favourite wonder in the world?")
+		sendText(sender, "sorry, sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
+		sendButtonMessage(sender, "which is favourite wonder in the world?")
 	}
 }
 
@@ -81,12 +79,7 @@ function sendButtonMessage(sender, text){
             "type":"postback",
             "title":"Pyramid",
             "Payload":"pyramid"
-          },
-          
-          {
-            "type":"postback",
-            "title":"Start Chatting",
-            "payload":"USER_DEFINED_PAYLOAD"
+       
           }
         ]
       }
