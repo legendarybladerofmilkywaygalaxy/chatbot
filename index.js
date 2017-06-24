@@ -50,12 +50,12 @@ app.post('/webhook/', function(req, res) {
 	res.sendStatus(200)
 })
 
-function decideMessage(sender, text1){
+function decideMessage(sender, text1) {
 
 	let text = text1.toLowerCase()
 	if (text.includes("hi")){
         sendText(sender, "hi")
-	} else if (text.includes("pyramid")){
+	} else if (text.includes("pyramid")) {
         sendImageMessage(sender)                   
 	} else {
 		sendText(sender, "sorry, Sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
@@ -108,7 +108,7 @@ function sendImageMessage(sender) {
 }
 function sendRequest(sender, messageData) {
 	request({
-		url: "https://graph.facebook.com/v2.6/me/messages",
+		url : "https://graph.facebook.com/v2.6/me/messages",
 		qs : {access_token : token},
 		method: "POST",
 		json: {
