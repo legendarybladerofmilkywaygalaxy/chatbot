@@ -61,7 +61,9 @@ function sendTextMessage(sender, text) {
 	sendRequest(sender, messageData)
 }
 
-
+function sendGenericMessage(recipientId, messageText) {
+  // To be expanded in later sections
+}
 
 }
 
