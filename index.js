@@ -36,9 +36,10 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
+			decideMessage(sender, text)
 			//sendText(sender, " " + text.substring(0, 100))
 			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
-			decideMessage(sender, text)
+			
 
 		}
 		if (event.postback) {
@@ -53,11 +54,14 @@ app.post('/webhook/', function(req, res) {
 function decideMessage(sender, text1) {
 
 	let text = text1.toLowerCase()
-	if (text.includes("pyramid")){
-        sendText(sender, "hi")                  
+	if (text.includes("summer")){
+        sendImageMessage(sender)                  
+	} else if (text.includes("winter")) {
+        sendGenericMessage(sender)
 	} else {
-		sendText(sender, "sorry, sriram is so lazy that he didnt programmed me completely ask him to completely program m.")
-		sendButtonMessage(sender, "which is favourite wonder in the world?")
+		sendText(sender, "I like fall")
+		//send question
+		sendButtonMessage(sender, "what is your favourite season?")
 	}
 }
 
@@ -70,16 +74,21 @@ function sendText(sender, text) {
 function sendButtonMessage(sender, text){
 	let messageData = {
 		"attachment":{
-        "type":"template",
-        "payload":{
+      "type":"template",
+      "payload":{
         "template_type":"button",
         "text":text,
         "buttons":[
           {
             "type":"postback",
-            "title":"Pyramid",
-            "Payload":"pyramid"
-       
+            "title":"Summer",
+            "Payload":"summer"
+           },
+           {
+           	"type":"postback",
+            "title":"Winter",
+            "Payload":"winter"
+           }
           }
         ]
       }
@@ -90,15 +99,41 @@ function sendButtonMessage(sender, text){
 
 function sendImageMessage(sender) {
 	let imageData = {
-		"attachment":{
-        "type":"image",
-        "payload":{
-        "url":"https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:Kheops-Pyramid.jpg"
+	"attachment":{
+      "type":"image",
+      "payload":{
+        "url":"http://dreamatico.com/data_images/summer/summer-5.jpg"
       }
-    }
+     }
 	}
 	sendRequest(sender, messageData)
 }
+
+function sendGenericMessage(sender) {
+	let messageData = { "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+           {
+            "title":"Winter!",
+            "image_url":"https://newevolutiondesigns.com/images/freebies/winter-wallpaper-20.jpg",
+            "subtitle":"I love Winter",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://en.wikipedia.org/wiki/Winter",
+                "title":"more about winter"
+              },         
+            ]      
+          }
+        ]
+      }
+    }
+  }
+  sendRequest(sender, messageData)
+}
+
 function sendRequest(sender, messageData) {
 	request({
 		url : "https://graph.facebook.com/v2.6/me/messages",
@@ -108,8 +143,7 @@ function sendRequest(sender, messageData) {
 			recipient: {id: sender},
 			message : messageData,
 		}
-	}, 
-	function(error, response, body) {
+	}, function(error, response, body) {
 		if (error) {
 			console.log("sending error")
 		} else if (response.body.error) {
