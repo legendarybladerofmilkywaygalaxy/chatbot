@@ -41,12 +41,33 @@ app.post('/webhook/', function(req, res) {
              case 'wonders':
              sendGenericMessage(sender);
              break;
-             case 'hi':
+            case 'hi':
              sendTextMessage(sender, "hi");
+             break;
+             case 'bye':
+             sendTextMessage(sender, "bye, please come again");
+             break;
+             case 'hello':
+             sendTextMessage(sender, "hello entra hi pettu");
+             break;
+             case 'hey':
+             sendTextMessage(sender, "hai :(");
+             break;
+             case 'haha':
+             sendTextMessage(sender, "hehe");
+             break;
+             case 'good':
+             sendTextMessage(sender, ":)");
+             break;
+             case 'hii':
+             sendTextMessage(sender, "hii");
+             break;
+             case 'who are you':
+             sendTextMessage(sender, "sriram bot :p");
              break;
 
              default:
-             sendTextMessage(sender, "Hii, message 'wonders', without quotes to know about wonders of world");
+             sendTextMessage(sender, "sorry sriram didnt programmed me completely. Ask him to completely program me, message 'wonders', without quotes to know about wonders of world");
            
 
     }
