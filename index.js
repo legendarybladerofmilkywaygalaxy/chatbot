@@ -71,14 +71,13 @@ function sendGenericMessage(sender) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            title: "Great Wall Of China",
+            subtitle: "scroll right to see more",               
+            image_url: "https://en.wikipedia.org/wiki/New7Wonders_of_the_World#/media/File:The_Great_Wall_of_China_at_Jinshanling.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "https://en.wikipedia.org/wiki/Great_Wall_of_China",
+              title: "Know more about Great wall of China"
             }, {
               type: "postback",
               title: "Call Postback",
