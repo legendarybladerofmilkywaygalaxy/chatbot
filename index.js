@@ -49,7 +49,7 @@ app.post('/webhook/', function(req, res) {
 		}
 	}
 	res.sendStatus(200)
-}
+})
 
 function decideMessage(sender, text1) {
 
@@ -132,7 +132,7 @@ function sendGenericMessage(sender) {
     }
   }
   sendRequest(sender, messageData)
-})
+}
 
 function sendRequest(sender, messageData) {
 	request({
