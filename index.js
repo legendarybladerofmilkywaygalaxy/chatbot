@@ -63,7 +63,7 @@ app.post('/webhook/', function(req, res) {
              sendTextMessage(sender, "hii");
              break;
              case 'image':
-             sendImageMessage(sender, "hii");
+             sendImageMessage(sender);
              break;
              case 'who are you':
              sendTextMessage(sender, "sriram bot :p");
@@ -201,7 +201,7 @@ function sendGenericMessage(sender) {
     }
      sendRequest(sender, messageData)
 }
-function sendImageMessage(sender, messageData) {
+function sendImageMessage(sender) {
 	let messageData = {
 		"attachment":{
       "type":"image",
