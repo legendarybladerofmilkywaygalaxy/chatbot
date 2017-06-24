@@ -37,8 +37,16 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 			//sendText(sender, " " + text.substring(0, 100))
-			sendText(sender, "Hii sriram is busy now so created me to chat with you ")
-			
+			//sendText(sender, "Hii sriram is busy now so created me to chat with you ")
+			 switch (event.message.text) {
+             case 'generic':
+             sendGenericMessage(sender);
+             break;
+
+             default:
+             sendTextMessage(sender, "Hii sriram is busy now so created me to chat with you");
+    }
+  }
 
 		}
 		
@@ -48,11 +56,14 @@ app.post('/webhook/', function(req, res) {
 
 
 
-function sendText(sender, text) {
+function sendTextMessage(sender, text) {
 	let messageData = {text: text}
 	sendRequest(sender, messageData)
 }
 
+
+
+}
 
 function sendRequest(sender, messageData) {
 	request({
