@@ -57,7 +57,19 @@ app.post('/webhook/', function(req, res) {
 
 function sendTextMessage(sender, text) {
 	let messageData = {text: text}
-	request({
+    sendRequest(sender, messageData) 
+}
+app.listen(app.get('port'), function() {
+	console.log("running: port")
+})
+
+function sendGenericMessage(sender) {
+  // To be expanded in later sections
+  
+}
+
+function sendRequest(sender, messageData) {
+		request({
 		url : "https://graph.facebook.com/v2.6/me/messages",
 		qs : {access_token : token},
 		method: "POST",
@@ -73,14 +85,7 @@ function sendTextMessage(sender, text) {
 		}
 	})
 }
-app.listen(app.get('port'), function() {
-	console.log("running: port")
-})
 
-function sendGenericMessage(sender) {
-  // To be expanded in later sections
-  
-}
 
 
 
