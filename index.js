@@ -43,8 +43,8 @@ app.post('/webhook/', function(req, res) {
              break;
 
              default:
-             //sendTextMessage(sender, "Hii, message 'wonders, without quotes to know about wonders of world");
-             decideMessage(sender, text1);
+             sendTextMessage(sender, "Hii, message 'wonders, without quotes to know about wonders of world");
+             decideMessage(sender, text);
 
     }
   
@@ -175,8 +175,7 @@ function sendGenericMessage(sender) {
      sendRequest(sender, messageData)
 }
 
-function decideMessage(sender, text1) {
-	let text = text1.toLowerCase()
+function decideMessage(sender, text) {
 	if (text.includes("hi")) {
         sendTextMessage(sender, "Hii, message 'wonders' without quotes to know about wonders of world" )                  
 	} else if (text.includes("hii")) {
