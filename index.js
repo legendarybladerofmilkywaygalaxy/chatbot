@@ -44,7 +44,7 @@ app.post('/webhook/', function(req, res) {
 
              default:
              //sendTextMessage(sender, "Hii, message 'wonders, without quotes to know about wonders of world");
-             decideMessage(sender, text);
+             decideMessage(sender, text1);
 
     }
   
