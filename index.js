@@ -206,7 +206,7 @@ function sendImageMessage(sender) {
 		"attachment":{
       "type":"image",
       "payload":{
-        "url":"https://petersapparel.com/img/shirt.png"
+        "url":"saikumar.jpg"
       }
     }
 	}
