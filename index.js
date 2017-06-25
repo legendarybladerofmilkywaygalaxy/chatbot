@@ -206,7 +206,7 @@ function sendImageMessage(sender) {
 		"attachment":{
       "type":"image",
       "payload":{
-        "url":"saikumar.jpg"
+        "url":"C:/Users/sriram/Desktop/chatbot/saikumar.jpg"
       }
     }
 	}
