@@ -47,7 +47,7 @@ app.post('/webhook/', function(req, res) {
              case 'bye':
              sendTextMessage(sender, "bye, please come again");
              break;
-             case 'hello':
+             case 'hell':
              sendTextMessage(sender, "hello entra hi pettu");
              break;
              case 'hey':
